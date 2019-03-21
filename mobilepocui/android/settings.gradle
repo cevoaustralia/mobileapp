@@ -1,0 +1,3 @@
+rootProject.name = 'mobilepocui'
+
+include ':app'
