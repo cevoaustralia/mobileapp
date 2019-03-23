@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     buttonStyle: {
         borderRadius: 3,
-        backgroundColor: '#FBA6BF',
+        backgroundColor: '#FF7A64',
     },
     container: {
         flex:1,
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         borderRadius: radius,
         borderStyle: 'solid',
         borderWidth: 4,
-        borderColor: '#FBA6BF',
+        borderColor: '#FF7A64',
     },
     top:{
         alignItems: 'center',
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     instructionsBottom: {
         flex:1,
         textAlign: 'center',
-        color: '#FBA6BF',
+        color: '#FF7A64',
         marginBottom: 5,
         marginTop: 30,
         justifyContent:'space-between',

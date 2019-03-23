@@ -15,7 +15,7 @@ const loginStyles = StyleSheet.create({
         backgroundColor: '#070707',
     },
     temptText: {
-        color: '#FBA6BF',
+        color: '#FF7A64',
     },
 });
 
@@ -23,7 +23,7 @@ export default class LoginScreen extends Component<Props> {
     static navigationOptions = {
         title: 'Action',
         headerStyle: {
-            backgroundColor: '#FBA6BF',
+            backgroundColor: '#FF7A64',
         },
         headerTintColor: '#070707',
         headerTitleStyle: {
