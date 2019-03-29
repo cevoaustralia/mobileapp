@@ -39,7 +39,7 @@ export class FloatingLabelInput extends Component {
             }),
             fontSize: this._animatedIsFocused.interpolate({
                 inputRange: [0, 1],
-                outputRange: [35, 14],
+                outputRange: [29, 14],
             }),
             color: this._animatedIsFocused.interpolate({
                 inputRange: [0, 1],
@@ -53,7 +53,7 @@ export class FloatingLabelInput extends Component {
                 </Animated.Text>
                 <TextInput
                     {...props}
-                    style={{ height: 64, fontSize: 35, color: '#FF7A64', borderBottomWidth: 3, borderBottomColor: !isFocused ? (this.props.value === '' ? '#ABABAB' : '#FF7A64') : '#FF7A64',}}
+                    style={{ height: 59, fontSize: 29, color: '#FF7A64', borderBottomWidth: 3, borderBottomColor: !isFocused ? (this.props.value === '' ? '#ABABAB' : '#FF7A64') : '#FF7A64',}}
                     onFocus={this.handleFocus}
                     onBlur={this.handleBlur}
                 />
