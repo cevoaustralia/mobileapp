@@ -11,9 +11,10 @@ import {Alert, StyleSheet, Text, View} from "react-native";
 import {Button} from "react-native-elements";
 import {FloatingLabelInput} from '../components/FloatingLabelInput';
 import Auth0 from 'react-native-auth0';
+import TouchID from 'react-native-touch-id';
 
-const auth0Domain = 'domain.com here';
-const auth0ClientID = 'client id string here';
+const auth0Domain = 'garble.auth0.garble';
+const auth0ClientID = 'garblegarblegarblegarble';
 const auth0 = new Auth0({domain: auth0Domain, clientId: auth0ClientID});
 
 const loginStyles = StyleSheet.create({
@@ -55,7 +56,18 @@ const loginStyles = StyleSheet.create({
 });
 
 function auth0Now(){
-    auth0.webAuth.authorize({scope: 'openid profile email', audience: `https://${auth0Domain}/userinfo`}).then(credentials => Alert.alert('here are the creds', credentials)).catch(error => Alert.alert('It failed', error.toString()));
+    //TODO: Auth0 does not support TouchID. Auth0 has deprecated biometrics from its kit of passwordless and has claimed that only Email and SMS code based login is secure enough for Passwordless login at the moment.
+    //TODO: We need to come up with a way to properly build a solution of Biometrics with Login.
+    //TODO: Possible Approach -- DO a device registration. Without Biometrics. Then during login --> Ask for Biometrics First time --> Then login --> then save this successful accessToken in a storage that can only be accessed by Biometrics --> Next Login ask for Biometrics --> use accessToken or do a refreshToken on this biomnetric pass, so it gives the feeling of a password less login.
+
+
+    TouchID.authenticate('Login to your Account').then( success => {
+            auth0.webAuth.authorize({scope: 'openid profile email', audience: `https://${auth0Domain}/userinfo`}).then(credentials => Alert.alert('here are the creds', credentials.toString())).catch(error => Alert.alert('It failed', error.toString()));
+        }
+    ).catch( error =>{
+        Alert.alert("TouchID Wonky", error.toString());
+    })
+
 }
 
 export default class LoginScreen extends Component<Props> {

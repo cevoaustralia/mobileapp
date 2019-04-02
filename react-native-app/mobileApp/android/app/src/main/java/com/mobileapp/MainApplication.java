@@ -3,6 +3,7 @@ package com.mobileapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.rnfingerprint.FingerprintAuthPackage;
 import com.auth0.react.A0Auth0Package;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new FingerprintAuthPackage(),
             new A0Auth0Package(),
             new RNGestureHandlerPackage(),
             new VectorIconsPackage()
